@@ -2,237 +2,915 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harshil Bhardwaj | DevOps Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Harshil Bhardwaj – DevOps Engineer | AWS Cloud & Security | CI/CD Automation"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-2: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.18);
+      --accent-2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.25);
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.55);
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+      background: radial-gradient(circle at 0% 0%, #1e293b 0, #020617 45%, #020617 100%);
+      color: var(--text);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(236, 72, 153, 0.16) 0, transparent 50%),
+        radial-gradient(circle at 30% 90%, rgba(45, 212, 191, 0.18) 0, transparent 55%);
+      opacity: 0.8;
+      mix-blend-mode: screen;
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* -------------- NAVBAR -------------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4));
+      margin-bottom: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.65);
+    }
+
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-title span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 5px 10px;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s, transform 0.12s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(148, 163, 184, 0.12);
+      color: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    /* -------------- HERO -------------- */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .hero-text {
+      padding: 26px 26px 26px 20px;
+    }
+
+    .hello-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+      margin-bottom: 16px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.6);
+    }
+
+    .hello-pill span.icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #4ade80, #22c55e);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.22);
+      font-size: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .tag strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.18s ease, background 0.3s;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: #f9fafb;
+      box-shadow: 0 18px 30px rgba(79, 70, 229, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 40px rgba(79, 70, 229, 0.7);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.45);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(209, 213, 219, 0.65);
+    }
+
+    .btn-primary svg,
+    .btn-ghost svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Photo Card */
+    .hero-photo-wrapper {
+      position: relative;
+      padding: 3px;
+      border-radius: 26px;
+      background: conic-gradient(
+        from 210deg,
+        rgba(79, 70, 229, 0.8),
+        rgba(45, 212, 191, 0.8),
+        rgba(236, 72, 153, 0.9),
+        rgba(79, 70, 229, 0.9)
+      );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-photo-inner {
+      border-radius: 22px;
+      background: radial-gradient(circle at 10% 0, #0f172a 0, #020617 60%);
+      padding: 10px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-photo-inner img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      max-height: 380px;
+      filter: saturate(1.1) contrast(1.02);
+    }
+
+    .photo-caption {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .photo-caption strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .online-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .online-dot span {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.26);
+    }
+
+    /* -------------- SECTIONS -------------- */
+    .section {
+      margin-bottom: 40px;
+      padding: 26px 22px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.97));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 16px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .section-title span.icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 0 0, #22c55e, #4f46e5);
+      font-size: 0.9rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .skill-card {
+      border-radius: var(--radius-md);
+      padding: 12px 12px 12px 12px;
+      background: radial-gradient(circle at 0 0, rgba(79, 70, 229, 0.2), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 30px rgba(15, 23, 42, 0.9);
+      border-color: rgba(129, 140, 248, 0.9);
+    }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .skill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+    }
+
+    .skill-body {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .project-card {
+      border-radius: var(--radius-md);
+      padding: 14px 14px 13px;
+      background: radial-gradient(circle at 0 0, rgba(14, 116, 144, 0.45), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(96, 165, 250, 0.7);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .project-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 0.72rem;
+    }
+
+    .project-tags span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .project-meta {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      color: rgba(148, 163, 184, 0.9);
+      margin-top: 8px;
+    }
+
+    .project-link {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #bfdbfe;
+    }
+
+    .project-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .mini-card {
+      border-radius: var(--radius-md);
+      padding: 10px 11px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .mini-card strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Timeline / Certs */
+    .timeline {
+      margin-top: 8px;
+      border-left: 1px solid rgba(148, 163, 184, 0.5);
+      padding-left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.8rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 3px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.35);
+    }
+
+    .timeline-title {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .contact-item {
+      border-radius: 999px;
+      padding: 7px 13px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .contact-item span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.95);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.79rem;
+      color: #e5e7eb;
+    }
+
+    footer {
+      margin-top: 10px;
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    /* -------------- RESPONSIVE -------------- */
+    @media (max-width: 900px) {
+      main {
+        padding-inline: 16px;
+      }
+
+      .nav {
+        padding-inline: 14px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-photo-wrapper {
+        max-width: 420px;
+        margin-inline: auto;
+        order: -1;
+      }
+
+      .section {
+        padding-inline: 18px;
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+      .hero-text {
+        padding-inline: 8px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="nav">
-  <div class="nav-inner">
-    <div class="logo">HB</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact">Contact</a>
+  <main>
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="nav-title">
+        Harshil Bhardwaj · <span>DevOps Engineer</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certificates</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
-  </div>
-</header>
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <p class="hero-tag">DevOps Engineer · AWS Cloud & Security · CI/CD Automation</p>
-    <h1>Hi, I'm <span>Harshil Bhardwaj</span></h1>
-    <p class="hero-sub">
-      I build secure, automated cloud infrastructure and CI/CD pipelines using
-      AWS, Docker, Linux, GitHub Actions and more.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="btn primary" href="#projects">View My Work</a>
-      <a class="btn secondary" href="https://github.com/Harshil074" target="_blank">GitHub Profile</a>
-    </div>
-
-    <div class="hero-meta">
-      <span>☁️ AWS & Cloud Security</span>
-      <span>⚙️ DevOps & Automation</span>
-      <span>🐧 Linux & Scripting</span>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="section-inner">
-    <h2>About Me</h2>
-    <p>
-      I'm a <strong>DevOps Engineer</strong> with hands-on experience in building
-      automated CI/CD pipelines, deploying applications on <strong>AWS EC2</strong>,
-      containerizing apps with <strong>Docker</strong>, and improving security
-      through IAM, SSH and AWS best practices.
-    </p>
-    <p>
-      I enjoy working at the intersection of <strong>cloud, security, and automation</strong> –
-      turning manual deployment pain into smooth, repeatable pipelines.
-      Always learning, always levelling up. 🔁
-    </p>
-
-    <div class="about-grid">
-      <div>
-        <h3>What I’m focusing on</h3>
-        <ul>
-          <li>Cloud-native infrastructure on AWS</li>
-          <li>CI/CD with GitHub Actions & other tools</li>
-          <li>Containerization & orchestration (Docker, K8s fundamentals)</li>
-          <li>Cloud Security & hardening (IAM, security groups, SSH)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Quick Info</h3>
-        <ul class="plain">
-          <li><strong>Location:</strong> India</li>
-          <li><strong>Current Focus:</strong> DevOps & Cloud Security roles</li>
-          <li><strong>Open To:</strong> DevOps / Cloud Engineer / SRE roles</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section alt">
-  <div class="section-inner">
-    <h2>Skills</h2>
-
-    <div class="skills-grid">
-      <div class="card">
-        <h3>DevOps & Cloud</h3>
-        <ul>
-          <li>AWS (EC2, ECR, IAM, VPC basics)</li>
-          <li>CI/CD – GitHub Actions</li>
-          <li>Infrastructure automation (bash, scripts)</li>
-          <li>Monitoring / logging basics</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Containers & Infra</h3>
-        <ul>
-          <li>Docker & Dockerfile best practices</li>
-          <li>Private container registry (AWS ECR)</li>
-          <li>Linux (Ubuntu) – server setup & hardening</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Security</h3>
-        <ul>
-          <li>AWS IAM & access management</li>
-          <li>Security Groups & SSH key based access</li>
-          <li>Basic cloud security principles</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Others</h3>
-        <ul>
-          <li>Git & GitHub</li>
-          <li>Node.js basics (backend)</li>
-          <li>Problem solving & debugging</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="section-inner">
-    <h2>Highlighted Projects</h2>
-
-    <div class="project-grid">
-
-      <!-- Project 1 -->
-      <article class="project-card">
-        <h3>DevOps CI/CD Pipeline – AWS EC2 + ECR</h3>
-        <p class="project-tags">GitHub Actions · Docker · AWS EC2 · ECR · SSH</p>
-        <p>
-          End-to-end CI/CD pipeline for a Node.js app. GitHub Actions builds a Docker image,
-          pushes it to <strong>AWS ECR</strong>, then SSHs into an <strong>EC2</strong> instance,
-          pulls the latest image and runs it as a container on port 80.
-        </p>
-        <ul>
-          <li>Automated build & push on every commit to <code>main</code>.</li>
-          <li>Secure SSH deployment with GitHub Secrets (AWS keys, EC2 host, PEM key).</li>
-          <li>Live “CI/CD working!” page served from EC2.</li>
-        </ul>
-        <div class="project-links">
-          <a href="https://github.com/Harshil074/devops-ci-cd-aws-project" target="_blank">View Repository →</a>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <div class="hello-pill">
+          <span class="icon">👋</span>
+          <span>Hi, I'm Harshil – building secure, automated infra on the cloud.</span>
         </div>
-      </article>
 
-      <!-- You can duplicate this block for more projects -->
-      <article class="project-card">
-        <h3>Monitoring & Deploying Apps on Google Cloud (Labs)</h3>
-        <p class="project-tags">Google Cloud Skills · Monitoring · Deployment</p>
-        <p>
-          Completed multiple hands-on labs including monitoring applications, deploying
-          apps to Google Cloud, and building a DevOps pipeline, gaining practical
-          experience with cloud deployment workflows.
+        <h1 class="hero-title">
+          DevOps Engineer <span>| AWS Cloud &amp; Security</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I love taking applications from <strong>code → container → cloud</strong>. I work with AWS, Docker,
+          Linux and GitHub Actions to build CI/CD pipelines, automate deployments to EC2, and harden
+          infrastructure with IAM and security best practices.
         </p>
-      </article>
 
-    </div>
-  </div>
-</section>
+        <div class="hero-tags">
+          <span class="tag"><strong>Current Focus:</strong> Cloud Security &amp; DevOps</span>
+          <span class="tag">AWS · Docker · Linux</span>
+          <span class="tag">CI/CD · GitHub Actions</span>
+          <span class="tag">Monitoring · Automation</span>
+        </div>
 
-<!-- CERTIFICATIONS -->
-<section id="certs" class="section alt">
-  <div class="section-inner">
-    <h2>Certifications & Learning</h2>
+        <div class="hero-buttons">
+          <a class="btn-primary" href="https://github.com/Harshil074" target="_blank">
+            <!-- GitHub Icon -->
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.58 2 12.26c0 4.51 2.87 8.34 6.84 9.69.5.1.68-.22.68-.49 0-.24-.01-.86-.01-1.69-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.9-1.32 2.73-1.05 2.73-1.05.55 1.42.21 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.82-4.59 5.07.36.31.68.93.68 1.88 0 1.36-.01 2.46-.01 2.79 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+            </svg>
+            View GitHub
+          </a>
 
-    <ul class="cert-list">
-      <li>
-        <strong>Scaler Masterclass – Fundamentals of Docker & Kubernetes</strong>
-        <span> · Scaler</span>
-      </li>
-      <li>
-        <strong>Google Cloud Skills Boost Labs</strong>
-        <span> – Monitoring Applications, Deploying Apps, Building a DevOps Pipeline</span>
-      </li>
-      <li>
-        <strong>Coursera Courses</strong>
-        <span> – Cloud / Security (details in resume / LinkedIn)</span>
-      </li>
-    </ul>
-
-    <p class="note">
-      I actively keep learning through hands-on labs, masterclasses and online courses
-      to stay up-to-date with DevOps & Cloud Security practices.
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="section-inner">
-    <h2>Contact</h2>
-    <p>
-      Want to collaborate, discuss an opportunity, or just talk about cloud & DevOps?
-      Feel free to reach out 👇
-    </p>
-
-    <div class="contact-grid">
-      <div>
-        <h3>Direct</h3>
-        <ul class="plain">
-          <li><strong>Email:</strong> <a href="mailto:harshilbhardwaj74.in@gmail.com">harshilbhardwaj74.in@gmail.com</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/Harshil074" target="_blank">@Harshil074</a></li>
-        </ul>
+          <a class="btn-ghost" href="#contact">
+            <!-- Mail Icon -->
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+              <path d="m22 7-10 7L2 7" />
+            </svg>
+            Let's Talk
+          </a>
+        </div>
       </div>
-      <div>
-        <h3>LinkedIn</h3>
-        <p>
-          (Add your LinkedIn profile link here)
-        </p>
+
+      <div class="hero-photo-wrapper">
+        <div class="hero-photo-inner">
+          <!-- YOUR PHOTO -->
+          <img src="assets/harshil-profile.jpg" alt="Harshil Bhardwaj" />
+          <div class="photo-caption">
+            <div>
+              <strong>Harshil Bhardwaj</strong>
+              <div class="project-meta">DevOps · Cloud · Security · Automation</div>
+            </div>
+            <div class="online-dot">
+              <span></span>
+              <span>Open to Opportunities</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer class="footer">
-  <p>© <span id="year"></span> Harshil Bhardwaj · Built with ❤️ using HTML & CSS</p>
-</footer>
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">🧰</span>
+          Tech Stack &amp; Skills
+        </div>
+        <div class="section-subtitle">
+          Tools I use to ship secure &amp; reliable applications.
+        </div>
+      </div>
 
-<script>
-  // set current year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>CI/CD &amp; Automation</span>
+            <span class="skill-pill">GitHub Actions</span>
+          </div>
+          <div class="skill-body">
+            Design end-to-end pipelines: build → test → Docker → push to ECR → deploy on EC2 with health checks,
+            rollbacks and environment secrets.
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>AWS Cloud</span>
+            <span class="skill-dot"></span>
+          </div>
+          <div class="skill-body">
+            Hands-on with EC2, ECR and IAM – from provisioning servers to securing access and automating deployments
+            using AWS CLI &amp; SDKs.
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>Docker &amp; Containers</span>
+            <span class="skill-pill">Docker</span>
+          </div>
+          <div class="skill-body">
+            Containerize Node.js apps, create lean images, manage tags, and use private registries like AWS ECR for
+            production-ready deployments.
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>Linux &amp; Shell</span>
+            <span class="skill-dot"></span>
+          </div>
+          <div class="skill-body">
+            Comfortable on the terminal – systemctl, logs, process monitoring, shell scripting and debugging servers in
+            SSH sessions.
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>Cloud Security</span>
+            <span class="skill-pill">IAM · Least Privilege</span>
+          </div>
+          <div class="skill-body">
+            Focus on secure-by-default: IAM roles, key management, SSH hardening, principle of least privilege and
+            secure secrets management.
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span>Monitoring &amp; Reliability</span>
+            <span class="skill-dot"></span>
+          </div>
+          <div class="skill-body">
+            Experience with logs, basic alerting and health-checks to ensure deployments are observable and recoverable.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">🚀</span>
+          Featured DevOps Project
+        </div>
+        <div class="section-subtitle">
+          Real-world automation showcasing what I enjoy building.
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>End-to-End CI/CD Pipeline – GitHub Actions → Docker → AWS ECR → EC2</h3>
+          <p>
+            A complete CI/CD setup for a Node.js app. On every push to main, GitHub Actions builds a Docker image,
+            pushes it to <strong>AWS ECR</strong>, SSHs into an <strong>EC2</strong> instance, pulls the latest image and
+            replaces the running container. The pipeline also handles stopping old containers and running the app behind
+            port 80 with proper logs.
+          </p>
+
+          <div class="project-tags">
+            <span>GitHub Actions</span>
+            <span>AWS EC2</span>
+            <span>AWS ECR</span>
+            <span>Docker</span>
+            <span>Linux</span>
+          </div>
+
+          <div class="project-meta">
+            status: <span style="color:#22c55e;">deployed</span> · stack: node18, docker, aws-cli, ssh
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/Harshil074/devops-ci-cd-aws-project"
+            target="_blank"
+          >
+            View Project on GitHub
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </a>
+        </article>
+
+        <article class="mini-card">
+          <strong>What this proves about me:</strong><br />
+          I can take an idea, containerize it, wire up CI/CD, deploy on cloud infrastructure and keep it secure – end to
+          end. This is the same approach I want to bring into real teams and production systems.
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section" id="certs">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">🎓</span>
+          Learning &amp; Certifications
+        </div>
+        <div class="section-subtitle">
+          I like to learn by doing – labs, masterclasses and cloud projects.
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-title">
+            Google Cloud Skills Boost – DevOps &amp; GCP Labs
+          </div>
+          <div class="timeline-meta">
+            Hands-on labs: Monitoring, Deploying apps, Building DevOps Pipeline, DR setup and incident response.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-title">
+            Scaler Masterclass – Fundamentals of Docker &amp; Kubernetes
+          </div>
+          <div class="timeline-meta">
+            Participated in containerization &amp; orchestration fundamentals: images, containers, registries and K8s
+            basics.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-title">
+            Coursera Courses – Cloud &amp; DevOps Foundations
+          </div>
+          <div class="timeline-meta">
+            Completed multiple courses focused on cloud fundamentals, infrastructure and DevOps tooling.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="icon">📬</span>
+          Let's Connect
+        </div>
+        <div class="section-subtitle">
+          Open to DevOps / Cloud / SRE opportunities, internships and collaboration.
+        </div>
+      </div>
+
+      <p style="font-size:0.88rem;color:var(--muted);max-width:620px;margin-bottom:10px;">
+        If you’re working on cloud-native applications, want to improve your delivery pipeline, or just want to talk
+        about DevOps &amp; Cloud Security, feel free to reach out.
+      </p>
+
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:harshilbhardwaj74.in@gmail.com">
+          <span class="icon">✉</span>
+          harshilbhardwaj74.in@gmail.com
+        </a>
+
+        <a
+          class="contact-item"
+          href="https://github.com/Harshil074"
+          target="_blank"
+        >
+          <span class="icon">GH</span>
+          github.com/Harshil074
+        </a>
+
+        <a
+          class="contact-item"
+          href="https://www.linkedin.com"
+          target="_blank"
+        >
+          <span class="icon">in</span>
+          LinkedIn profile (coming soon)
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Harshil Bhardwaj · Built with HTML &amp; CSS · Deployed on GitHub Pages
+    </footer>
+  </main>
+
+  <script>
+    // set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
