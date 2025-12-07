@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshil Bhardwaj | DevOps Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">HB</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">DevOps Engineer · AWS Cloud & Security · CI/CD Automation</p>
+    <h1>Hi, I'm <span>Harshil Bhardwaj</span></h1>
+    <p class="hero-sub">
+      I build secure, automated cloud infrastructure and CI/CD pipelines using
+      AWS, Docker, Linux, GitHub Actions and more.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn primary" href="#projects">View My Work</a>
+      <a class="btn secondary" href="https://github.com/Harshil074" target="_blank">GitHub Profile</a>
+    </div>
+
+    <div class="hero-meta">
+      <span>☁️ AWS & Cloud Security</span>
+      <span>⚙️ DevOps & Automation</span>
+      <span>🐧 Linux & Scripting</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <h2>About Me</h2>
+    <p>
+      I'm a <strong>DevOps Engineer</strong> with hands-on experience in building
+      automated CI/CD pipelines, deploying applications on <strong>AWS EC2</strong>,
+      containerizing apps with <strong>Docker</strong>, and improving security
+      through IAM, SSH and AWS best practices.
+    </p>
+    <p>
+      I enjoy working at the intersection of <strong>cloud, security, and automation</strong> –
+      turning manual deployment pain into smooth, repeatable pipelines.
+      Always learning, always levelling up. 🔁
+    </p>
+
+    <div class="about-grid">
+      <div>
+        <h3>What I’m focusing on</h3>
+        <ul>
+          <li>Cloud-native infrastructure on AWS</li>
+          <li>CI/CD with GitHub Actions & other tools</li>
+          <li>Containerization & orchestration (Docker, K8s fundamentals)</li>
+          <li>Cloud Security & hardening (IAM, security groups, SSH)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Quick Info</h3>
+        <ul class="plain">
+          <li><strong>Location:</strong> India</li>
+          <li><strong>Current Focus:</strong> DevOps & Cloud Security roles</li>
+          <li><strong>Open To:</strong> DevOps / Cloud Engineer / SRE roles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section alt">
+  <div class="section-inner">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div class="card">
+        <h3>DevOps & Cloud</h3>
+        <ul>
+          <li>AWS (EC2, ECR, IAM, VPC basics)</li>
+          <li>CI/CD – GitHub Actions</li>
+          <li>Infrastructure automation (bash, scripts)</li>
+          <li>Monitoring / logging basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Containers & Infra</h3>
+        <ul>
+          <li>Docker & Dockerfile best practices</li>
+          <li>Private container registry (AWS ECR)</li>
+          <li>Linux (Ubuntu) – server setup & hardening</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Security</h3>
+        <ul>
+          <li>AWS IAM & access management</li>
+          <li>Security Groups & SSH key based access</li>
+          <li>Basic cloud security principles</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Others</h3>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>Node.js basics (backend)</li>
+          <li>Problem solving & debugging</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="section-inner">
+    <h2>Highlighted Projects</h2>
+
+    <div class="project-grid">
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <h3>DevOps CI/CD Pipeline – AWS EC2 + ECR</h3>
+        <p class="project-tags">GitHub Actions · Docker · AWS EC2 · ECR · SSH</p>
+        <p>
+          End-to-end CI/CD pipeline for a Node.js app. GitHub Actions builds a Docker image,
+          pushes it to <strong>AWS ECR</strong>, then SSHs into an <strong>EC2</strong> instance,
+          pulls the latest image and runs it as a container on port 80.
+        </p>
+        <ul>
+          <li>Automated build & push on every commit to <code>main</code>.</li>
+          <li>Secure SSH deployment with GitHub Secrets (AWS keys, EC2 host, PEM key).</li>
+          <li>Live “CI/CD working!” page served from EC2.</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Harshil074/devops-ci-cd-aws-project" target="_blank">View Repository →</a>
+        </div>
+      </article>
+
+      <!-- You can duplicate this block for more projects -->
+      <article class="project-card">
+        <h3>Monitoring & Deploying Apps on Google Cloud (Labs)</h3>
+        <p class="project-tags">Google Cloud Skills · Monitoring · Deployment</p>
+        <p>
+          Completed multiple hands-on labs including monitoring applications, deploying
+          apps to Google Cloud, and building a DevOps pipeline, gaining practical
+          experience with cloud deployment workflows.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs" class="section alt">
+  <div class="section-inner">
+    <h2>Certifications & Learning</h2>
+
+    <ul class="cert-list">
+      <li>
+        <strong>Scaler Masterclass – Fundamentals of Docker & Kubernetes</strong>
+        <span> · Scaler</span>
+      </li>
+      <li>
+        <strong>Google Cloud Skills Boost Labs</strong>
+        <span> – Monitoring Applications, Deploying Apps, Building a DevOps Pipeline</span>
+      </li>
+      <li>
+        <strong>Coursera Courses</strong>
+        <span> – Cloud / Security (details in resume / LinkedIn)</span>
+      </li>
+    </ul>
+
+    <p class="note">
+      I actively keep learning through hands-on labs, masterclasses and online courses
+      to stay up-to-date with DevOps & Cloud Security practices.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <h2>Contact</h2>
+    <p>
+      Want to collaborate, discuss an opportunity, or just talk about cloud & DevOps?
+      Feel free to reach out 👇
+    </p>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Direct</h3>
+        <ul class="plain">
+          <li><strong>Email:</strong> <a href="mailto:harshilbhardwaj74.in@gmail.com">harshilbhardwaj74.in@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/Harshil074" target="_blank">@Harshil074</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>LinkedIn</h3>
+        <p>
+          (Add your LinkedIn profile link here)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Harshil Bhardwaj · Built with ❤️ using HTML & CSS</p>
+</footer>
+
+<script>
+  // set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
